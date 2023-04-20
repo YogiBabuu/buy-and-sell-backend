@@ -9,6 +9,7 @@ const connection = mysql.createConnection({
 
 export const db = {
     connect: () => connection.connect(),
+
     query : (queryString, escapedValues) =>
         new Promise((resolve, reject) => {
             connection.query(queryString, escapedValues, (error, results, fields) => {
@@ -17,6 +18,7 @@ export const db = {
 
             })
         }),
+        
     end: () => connection.end(),
     
 
